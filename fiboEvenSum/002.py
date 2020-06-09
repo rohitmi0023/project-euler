@@ -1,3 +1,5 @@
+import time
+# start = time.time()
 def fibo_even_sum(num):
     arr = []
     sum = 0
@@ -11,10 +13,14 @@ def fibo_even_sum(num):
     if num >= 3:
         while arr[i - 1] + arr[i - 2] <= num:
             arr.append(arr[i - 1] + arr[i - 2])
-            i+=1
+            i += 1
     for j in range(i):
         if arr[j] % 2 == 0:
             sum += arr[j]
     return sum
     
-print(fibo_even_sum(100000))
+for i in range(int(input())):
+    print(fibo_even_sum(int(input())))
+end = time.time()
+print(" %s seconds" %(end - start))
+# # 6.6534371376 seconds for 100
